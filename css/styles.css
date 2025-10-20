@@ -214,12 +214,12 @@ html { scroll-behavior: smooth; } /* smooth anchor scrolling */
 
 /* ===== Background image + RGBA gradient overlay on Education =====*/
 .education{
-  position: relative;            /* needed for ::before to overlay this box */
+  position: relative;            
   border-radius: var(--radius);
-  padding: 60px 0;               /* keep your spacing */
+  padding: 60px 0;              
   margin: 2%;
-  color: white;                  /* readable text over image */
-  overflow: hidden;              /* clips the overlay to rounded corners */
+  color: white;                
+  overflow: hidden;              
 }
 
 /* Single overlay with image + RGBA gradient */
@@ -230,8 +230,8 @@ html { scroll-behavior: smooth; } /* smooth anchor scrolling */
   background:
     linear-gradient(
       to bottom right,
-      rgba(11, 11, 112, 0.65),   /* your palette’s #0b0b70 with alpha */
-      rgba(53, 135, 164, 0.65)   /* your palette’s #3587A4 with alpha */
+      rgba(11, 11, 112, 0.65),   
+      rgba(53, 135, 164, 0.65)   
     ),
     url("../images/education-bg.jpg") center/cover no-repeat;
   z-index: 0;
