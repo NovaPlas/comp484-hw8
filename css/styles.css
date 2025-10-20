@@ -129,12 +129,25 @@ li{
 .work-experience li { margin-bottom: .5rem; }
 
 /* Education */
-.education {
-  background-color: var(--clr-edu-bg);
-  color: var(--clr-edu-text);
+.education{
+  position: relative;            
   border-radius: var(--radius);
-  padding: 20px;
-  margin:2%;
+  padding: 60px 0;              
+  margin: 2%;
+  color: white;                
+  overflow: hidden;              
+}
+
+/* Single overlay with image + RGBA gradient */
+.education::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom right, rgba(11, 11, 112, 0.65), rgba(53, 135, 164, 0.65)),
+    url("../images/education-bg.jpg") center/cover no-repeat;
+  background-attachment: fixed; /* makes image stay while scrolling */
+  z-index: 0;
 }
 
 .contact-info a {
@@ -213,26 +226,7 @@ html { scroll-behavior: smooth; } /* smooth anchor scrolling */
 }
 
 /* ===== Background image + RGBA gradient overlay on Education =====*/
-.education{
-  position: relative;            
-  border-radius: var(--radius);
-  padding: 60px 0;              
-  margin: 2%;
-  color: white;                
-  overflow: hidden;              
-}
 
-/* Single overlay with image + RGBA gradient */
-.education::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(to bottom right, rgba(11, 11, 112, 0.65), rgba(53, 135, 164, 0.65)),
-    url("../images/education-bg.jpg") center/cover no-repeat;
-  background-attachment: fixed; /* makes image stay while scrolling */
-  z-index: 0;
-}
 
 
 /* Keep content above overlay */
