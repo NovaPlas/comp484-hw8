@@ -1,0 +1,249 @@
+/* =========================================
+   Color Palette
+   - color 1: #3587A4
+   - color 2: #88CCF1
+   - color 3: #D8DDEF
+   - color 4: #0b0b70
+   ========================================= */
+
+   *,
+*::before,
+*::after { box-sizing: border-box; }
+
+:root {
+  --clr-header-bg:   #3587A4; /* site header */
+  --clr-footer-bg:   #88CCF1; /* site footer */
+  --clr-work-bg:     #88CCF1; /* work exp */
+  --clr-edu-bg:      #D8DDEF; /* education */
+  --clr-edu-text:    #0b0b70; /* education text */
+  --clr-text-dark:   #000000;
+  --clr-text-light:  #ffffff;
+
+  --page-bg:         #ffffff; /* page canvas */
+  --body-bg:         #C1DFF0; /* outer background if you want a frame */
+  --link:            rgb(184,126,84);
+  --link-hover:      rgb(120,97,55);
+
+  --container:       1050px;
+  --space-1:         .5rem;
+  --space-2:         1rem;
+  --space-3:         1.5rem;
+  --space-4:         2rem;
+  --radius:          12px;
+}
+
+/* =============== Global styles =============== */
+html, body {
+  margin: 0;
+  background: var(--body-bg);   /* outer frame color */
+}
+
+body {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 100%;
+  line-height: 1.8;
+  color: var(--clr-text-dark);
+  background: var(--page-bg);
+  margin: 0;              /* keep zero */
+  padding: 0;             /* let .content-wrap handle spacing */
+}
+
+
+
+
+/* Headings: Dancing Script for personality */
+h1, h2, h3 {
+  font-family: "Dancing Script", cursive;
+  color: rgb(107, 107, 132);
+  line-height: 1.2;
+}
+h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 700; margin-bottom: .4em; color: rgb(0, 29, 77); }
+h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 600; margin-bottom: .2em; color:#021b2a;}
+h3 { font-size: 1.2rem; font-weight: 600; color:rgb(0, 29, 54);}
+
+h2 { margin-top: 0; }                 /* ensure no top margin */
+header h1, header h2 { margin: 0; } 
+
+p { font-family: "Playwrite US Modern", cursive; }
+
+li{
+    font-family: "Playwrite US Modern", cursive;
+}
+
+.content-wrap{
+  max-width: 950px;                    /* step 2d: use max-width */
+  margin: 0 auto;                      /* step 1b */
+  padding: 50px;                       /* step 3a */
+  overflow: hidden;                    /* step 4f: contain floats */
+}
+.column-narrow{
+  width: 30%;
+  float: left;
+  padding-right: 3%;
+  min-height: 175px;
+}
+.column-wide{
+  width: 70%;
+  float: left;
+  min-height: 225px;
+}
+.column-narrow img{ 
+  max-width: 100%; height: auto; display: block; 
+}
+.profile-img{
+  /* width/float/margin removed in step 6f */
+  border-radius: 50%;                  /* keep round shape */
+}
+
+.container {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--space-2);
+}
+
+/* =============== Header (scoped) =============== */
+.site-header {
+  background-color: var(--clr-header-bg);
+  color: var(--clr-text-light); /* ensure readable text color */
+  padding: var(--space-4) 0;
+  border-radius: var(--radius);
+}
+.header-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+/* =============== Sections =============== */
+.section-block { padding: var(--space-4) 0; }
+
+/* Work Experience */
+.work-experience {
+  background-color: var(--clr-work-bg);
+  color: var(--clr-text-dark);
+  border-radius: var(--radius);
+  padding:20px;
+}
+.work-experience ul { padding-left: 1.2rem; }
+.work-experience li { margin-bottom: .5rem; }
+
+/* Education */
+.education {
+  background-color: var(--clr-edu-bg);
+  color: var(--clr-edu-text);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin:2%;
+}
+
+.contact-info a {
+  padding: 10px;
+  display: inline-block;
+}
+
+/* Footer */
+.site-footer {
+  background-color: var(--clr-footer-bg);
+  color: var(--clr-text-dark);
+  text-align: center;
+  padding: var(--space-4) 0;
+  border-top: 1px solid rgba(0,0,0,.15);
+  border-radius: var(--radius);
+  padding-bottom: 5%;
+}
+
+/* =============== Legacy styles you kept (optional) =============== */
+
+
+.center { text-align: center; }
+
+
+a{ color: var(--link); text-decoration: none; }
+a:hover{ color: var(--link-hover); text-decoration: underline; }
+
+.clearfix::after{ content:""; display:block; clear:both; }
+
+/* ===== Nav: sticky, no-lists, links to sections ===== */
+html { scroll-behavior: smooth; } /* smooth anchor scrolling */
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: rgba(2, 27, 42, 0.9);
+  backdrop-filter: saturate(140%) blur(6px);
+  box-shadow: 0 2px 10px rgba(0,0,0,.15);
+}
+
+.site-nav .container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  padding: .75rem 1rem;
+}
+
+.site-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: .2px;
+  padding: .4rem .8rem;
+  border-radius: 999px;
+  transition: transform .12s ease, background-color .12s ease, color .12s ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  background: #88CCF1;
+  color: #021b2a;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+/* Space so the sticky nav doesn’t feel cramped against content */
+.site-header { margin-top: 0; }
+
+/* ===== Footer icons spacing ===== */
+.contact-info a i {
+  margin-right: .5rem;
+  width: 1.1em;
+  text-align: center;
+}
+
+/* ===== Background image + RGBA gradient overlay on Education =====
+   Put your image at: images/education-bg.jpg (or change the URL) */
+.education {
+  position: relative;
+  color: #ffffff; /* ensure readability over image */
+  overflow: hidden;
+}
+
+.education::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Gradient (RGBA) layered over the photo */
+  background:
+    linear-gradient(
+      to bottom right,
+      rgba(11, 11, 112, 0.65),
+      rgba(53, 135, 164, 0.65)
+    ),
+    url("../images/education-bg.jpg") center/cover no-repeat;
+  z-index: 0;
+}
+
+.education > .content-wrap,
+.education h2,
+.education p,
+.education li {
+  position: relative;
+  z-index: 1;  /* keep text above overlay */
+}
+
+/* Optional: subtle text shadow for contrast on image */
+.education h2, .education p, .education li {
+  text-shadow: 0 1px 2px rgba(0,0,0,.35);
+}
