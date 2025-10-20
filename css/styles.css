@@ -213,8 +213,7 @@ html { scroll-behavior: smooth; } /* smooth anchor scrolling */
 }
 
 /* ===== Background image + RGBA gradient overlay on Education =====*/
- /* Remove the earlier plain .education background-color block or keep only spacing */
-.education {
+.education{
   position: relative;            /* needed for ::before to overlay this box */
   border-radius: var(--radius);
   padding: 60px 0;               /* keep your spacing */
