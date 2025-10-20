@@ -212,43 +212,38 @@ html { scroll-behavior: smooth; } /* smooth anchor scrolling */
   text-align: center;
 }
 
-/* ===== Background image + RGBA gradient overlay on Education =====
-   Put your image at: images/education-bg.jpg (or change the URL) */
- .education {
-  background: 
-    linear-gradient(
-      rgba(255, 255, 255, 0.6),    /* top layer: dark transparent overlay */
-      rgba(16, 57, 72, 0.6)
-    ),
-    url("../images/education-bg.jpg") center center / cover no-repeat;
-  color: white;              /* makes text readable */
-  padding: 60px 0;
+/* ===== Background image + RGBA gradient overlay on Education =====*/
+ /* Remove the earlier plain .education background-color block or keep only spacing */
+.education {
+  position: relative;            /* needed for ::before to overlay this box */
+  border-radius: var(--radius);
+  padding: 60px 0;               /* keep your spacing */
+  margin: 2%;
+  color: white;                  /* readable text over image */
+  overflow: hidden;              /* clips the overlay to rounded corners */
 }
 
+/* Single overlay with image + RGBA gradient */
 .education::before {
   content: "";
   position: absolute;
   inset: 0;
-  /* Gradient (RGBA) layered over the photo */
   background:
     linear-gradient(
       to bottom right,
-      rgba(11, 11, 112, 0.65),
-      rgba(53, 135, 164, 0.65)
+      rgba(11, 11, 112, 0.65),   /* your palette’s #0b0b70 with alpha */
+      rgba(53, 135, 164, 0.65)   /* your palette’s #3587A4 with alpha */
     ),
     url("../images/education-bg.jpg") center/cover no-repeat;
   z-index: 0;
 }
 
+/* Keep content above overlay */
 .education > .content-wrap,
 .education h2,
 .education p,
 .education li {
   position: relative;
-  z-index: 1;  /* keep text above overlay */
-}
-
-/* Optional: subtle text shadow for contrast on image */
-.education h2, .education p, .education li {
-  text-shadow: 0 1px 2px rgba(0,0,0,.35);
+  z-index: 1;
+  text-shadow: 0 1px 2px rgba(0,0,0,.35); /* subtle contrast */
 }
