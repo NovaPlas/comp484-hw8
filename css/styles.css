@@ -228,14 +228,12 @@ html { scroll-behavior: smooth; } /* smooth anchor scrolling */
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(
-      to bottom right,
-      rgba(11, 11, 112, 0.65),   
-      rgba(53, 135, 164, 0.65)   
-    ),
+    linear-gradient(to bottom right, rgba(11, 11, 112, 0.65), rgba(53, 135, 164, 0.65)),
     url("../images/education-bg.jpg") center/cover no-repeat;
+  background-attachment: fixed; /* makes image stay while scrolling */
   z-index: 0;
 }
+
 
 /* Keep content above overlay */
 .education > .content-wrap,
