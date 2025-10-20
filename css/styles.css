@@ -214,10 +214,15 @@ html { scroll-behavior: smooth; } /* smooth anchor scrolling */
 
 /* ===== Background image + RGBA gradient overlay on Education =====
    Put your image at: images/education-bg.jpg (or change the URL) */
-.education {
-  position: relative;
-  color: #ffffff; /* ensure readability over image */
-  overflow: hidden;
+ .education {
+  background: 
+    linear-gradient(
+      rgba(255, 255, 255, 0.6),    /* top layer: dark transparent overlay */
+      rgba(16, 57, 72, 0.6)
+    ),
+    url("../images/education-bg.jpg") center center / cover no-repeat;
+  color: white;              /* makes text readable */
+  padding: 60px 0;
 }
 
 .education::before {
