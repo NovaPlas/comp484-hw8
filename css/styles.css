@@ -133,7 +133,7 @@ li{
   position: relative;            
   border-radius: var(--radius);
   padding: 60px 0;              
-  margin: 2%;
+  margin: 0;
   color: white;                
   overflow: hidden;              
 }
