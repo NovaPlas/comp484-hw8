@@ -166,9 +166,6 @@ li{
   padding-bottom: 5%;
 }
 
-/* =============== Legacy styles you kept (optional) =============== */
-
-
 .center { text-align: center; }
 
 
@@ -177,8 +174,7 @@ a:hover{ color: var(--link-hover); text-decoration: underline; }
 
 .clearfix::after{ content:""; display:block; clear:both; }
 
-/* ===== Nav: sticky, no-lists, links to sections ===== */
-html { scroll-behavior: smooth; } /* smooth anchor scrolling */
+html { scroll-behavior: smooth; } 
 
 .site-nav {
   position: sticky;
